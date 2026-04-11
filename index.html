@@ -1,206 +1,69 @@
+<!-- =======================
+FILE: index.html
+======================= -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Moussa Coulibaly | Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header class="header">
-    <nav class="nav">
-      <h1 class="logo reveal" data-delay="0s">Moussa.</h1>
-      <ul class="nav-links">
-        <li><a href="#about">À propos</a></li>
-        <li><a href="#skills">Compétences</a></li>
-        <li><a href="#projects">Projets</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+<header class="header">
+  <nav class="nav">
+    <h1 class="logo">Moussa</h1>
+    <ul class="nav-links">
+      <li><a href="#about">À propos</a></li>
+      <li><a href="#skills">Compétences</a></li>
+      <li><a href="#projects">Projets</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="menu-toggle">☰</div>
+  </nav>
+</header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <h2 class="reveal" data-delay="0.05s">Développeur Flutter & Passionné d'informatique</h2>
-    <p class="reveal" data-delay="0.15s">
-      Je conçois des applications utiles, modernes et accessibles,
-      avec une forte envie d'apprendre et de progresser.
-    </p>
-    <div class="hero-buttons">
-      <a href="#projects" class="btn reveal" data-delay="0.25s">Voir mes projets</a>
-      <a href="#contact" class="btn btn-outline reveal" data-delay="0.3s">Me contacter</a>
-    </div>
-  </section>
+<section class="hero">
+  <h2 class="reveal">Développeur Web & Mobile</h2>
+  <p class="reveal">Je crée des solutions modernes, rapides et utiles.</p>
+  <a href="#projects" class="btn reveal">Voir mes projets</a>
+</section>
 
-  <!-- ABOUT -->
-  <section id="about" class="section">
-    <h3 class="reveal" data-delay="0.05s">À propos de moi</h3>
-    <p class="reveal" data-delay="0.1s">
-      Je m'appelle Moussa Coulibaly, passionné par l'informatique et le développement
-      d'applications. Autodidacte et motivé, je développe des projets personnels
-      en Flutter, web et intelligence artificielle, malgré un environnement
-      aux ressources limitées.
-    </p>
-    <p class="reveal" data-delay="0.15s">
-      Mon parcours a commencé avec une curiosité insatiable pour la technologie.
-      En tant qu'étudiant en informatique, j'ai appris à coder par moi-même,
-      explorant des langages comme Dart, Python et JavaScript. J'ai créé des
-      applications mobiles avec Flutter, des sites web responsives, et même
-      expérimenté avec l'IA pour des projets innovants.
-    </p>
-    <p class="reveal" data-delay="0.2s">
-      Ce qui me motive, c'est la résolution de problèmes réels et l'impact positif
-      que la technologie peut avoir. Que ce soit en facilitant l'accès à l'éducation
-      avec MaliStudyConnect ou en créant des outils éducatifs offline comme KalanTools,
-      je m'efforce de rendre la technologie accessible à tous.
-    </p>
-    <p class="reveal" data-delay="0.25s">
-      Mon objectif est de continuer à apprendre, créer des solutions utiles
-      et saisir des opportunités de stage ou de collaboration freelance.
-      Je suis ouvert aux défis, aux nouvelles technologies et aux projets collaboratifs.
-    </p>
-  </section>
+<section id="about" class="section">
+  <h3 class="reveal">À propos</h3>
+  <p class="reveal">Développeur passionné basé au Mali. Je construis des applications utiles et accessibles.</p>
+</section>
 
-  <!-- SKILLS -->
-  <section id="skills" class="section section-alt">
-    <h3 class="reveal" data-delay="0.05s">Compétences</h3>
-    <div class="skills-grid">
-      <div class="skill-card reveal" data-delay="0.08s">Dart / Flutter</div>
-      <div class="skill-card reveal" data-delay="0.10s">HTML / CSS</div>
-       <div class="skill-card reveal" data-delay="0.18s">React (bases)</div>
-        <div class="skill-card reveal" data-delay="0.18s">Typescript (bases)</div>
-      <div class="skill-card reveal" data-delay="0.12s">JavaScript (bases)</div>
-      <div class="skill-card reveal" data-delay="0.14s">Python (bases)</div>
-      <div class="skill-card reveal" data-delay="0.16s">Git & GitHub</div>
-      <div class="skill-card reveal" data-delay="0.18s">Windows & Ubuntu</div>
-    </div>
-  </section>
-
-  <!-- PROJECTS -->
-  <section id="projects" class="section">
-    <h3 class="reveal" data-delay="0.05s">Projets</h3>
-    <div class="projects-grid">
-
-      <div class="project-card reveal" data-delay="0.08s">
-        <h4>MaliStudyConnect</h4>
-        <p>
-          Application mobile d'inter-connection entre les étudiants,
-          en vue de faciliter le partage de ressources académiques.
-        </p>
-        <img src="assets/MaliStudyConnect.png" alt="Capture d'écran de MaliStudyConnect" class="project-image">
-        <span>JavaScript \ Flutter / Dart</span>
-        <a href="#" class="btn btn-small">Voir sur GitHub</a>
-      </div>
-
-      <div class="project-card reveal" data-delay="0.12s">
-        <h4>KalanTools</h4>
-        <p>
-          Application éducative offline intégrant une calculatrice,
-          une bibliothèque scolaire et un module de notes.
-        </p>
-        <img src="assets/kalan_tools.png" alt="Capture d'écran de KalanTools" class="project-image">
-        <span>Flutter / Dart</span>
-        <a href="#" class="btn btn-small">Voir sur GitHub</a>
-      </div>
-
-      <div class="project-card reveal" data-delay="0.16s">
-        <h4>Lahidou_tok</h4>
-        <p>
-          Application avec defilement vertical de vidéos courtes,
-          inspirée de TikTok, pour la vente de produits et services en ligne.
-        </p>
-        <img src="assets/Lahidou_tok.png" alt="Capture d'écran de Lahidou_tok" class="project-image">
-        <span>Python / IA</span>
-        <a href="#" class="btn btn-small">Voir sur GitHub</a>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="section section-alt">
-    <h3 class="reveal" data-delay="0.05s">Contactez-moi</h3>
-    <p class="reveal" data-delay="0.1s">
-      Vous avez un projet en tête, une idée à concrétiser, ou simplement envie de discuter
-      de technologie et d'innovation ? N'hésitez pas à me contacter ! Que ce soit pour une
-      collaboration, un stage, ou juste pour échanger sur nos passions communes.
-    </p>
-    <p class="reveal" data-delay="0.15s">
-      Je suis toujours ouvert aux nouvelles opportunités et j'adore rencontrer des personnes
-      partageant les mêmes intérêts. Ensemble, nous pouvons créer quelque chose d'extraordinaire.
-    </p>
-    <div class="contact-info reveal" data-delay="0.2s">
-      <p><strong>Téléphone :</strong> +223 78 18 34</p>
-      <p><strong>Email :</strong> moussacoulibalymofa@email.com</p>
-      <p><strong>Localisation :</strong> Mali</p>
-    </div>
-    <div class="contact-links reveal" data-delay="0.25s">
-      <a href="mailto:moussacoulibalymofa@email.com" class="contact-link">Envoyer un email</a>
-      <a href="https://github.com/mouZz-mali" class="contact-link" target="_blank">Visiter mon GitHub</a>
-      <a href="#" class="contact-link">LinkedIn (bientôt)</a>
-      <a href="#" class="contact-link">Instagram (bientôt)</a>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <p>© 2025 Moussa Coulibaly — Tous droits réservés</p>
-  </footer>
-
-  <!-- Lightbox Modal -->
-  <div id="image-modal" class="modal">
-    <span class="close">&times;</span>
-    <img class="modal-content" id="modal-image" alt="Image agrandie">
+<section id="skills" class="section alt">
+  <h3 class="reveal">Compétences</h3>
+  <div class="skills">
+    <div class="card reveal">Flutter</div>
+    <div class="card reveal">JavaScript</div>
+    <div class="card reveal">Python</div>
+    <div class="card reveal">React</div>
   </div>
+</section>
 
-  <script>
-    (function(){
-      const elems = document.querySelectorAll('.reveal');
-      function applyDelay(el){
-        const d = el.getAttribute('data-delay');
-        if(d) el.style.transitionDelay = d;
-      }
-      if('IntersectionObserver' in window){
-        const obs = new IntersectionObserver((entries)=>{
-          entries.forEach(entry=>{
-            if(entry.isIntersecting){
-              applyDelay(entry.target);
-              entry.target.classList.add('in-view');
-              obs.unobserve(entry.target);
-            }
-          });
-        },{threshold:0.12});
-        elems.forEach(el=>obs.observe(el));
-      } else {
-        elems.forEach(el=>{ applyDelay(el); el.classList.add('in-view'); });
-      }
-    })();
+<section id="projects" class="section">
+  <h3 class="reveal">Projets</h3>
+  <div class="projects">
+    <div class="card reveal">
+      <h4>MaliStudyConnect</h4>
+      <p>Application mobile pour étudiants.</p>
+      <a href="#" class="btn-small">Voir</a>
+    </div>
+  </div>
+</section>
 
-    // Lightbox functionality
-    const modal = document.getElementById('image-modal');
-    const modalImg = document.getElementById('modal-image');
-    const closeBtn = document.getElementsByClassName('close')[0];
+<section id="contact" class="section alt">
+  <h3 class="reveal">Contact</h3>
+  <p class="reveal">Contacte-moi pour collaborer.</p>
+</section>
 
-    document.querySelectorAll('.project-image').forEach(img => {
-      img.onclick = function(){
-        modal.style.display = 'block';
-        modalImg.src = this.src;
-        modalImg.alt = this.alt;
-      }
-    });
+<button id="topBtn">↑</button>
 
-    closeBtn.onclick = function() {
-      modal.style.display = 'none';
-    }
-
-    modal.onclick = function(event) {
-      if (event.target === modal) {
-        modal.style.display = 'none';
-      }
-    }
-  </script>
-
+<script src="script.js"></script>
 </body>
 </html>
+
