@@ -1,41 +1,151 @@
-// // =======================
-// // FILE: script.js
-// // =======================
+// =============================
+// ANIMATIONS & INTERACTIONS
+// =============================
 
-// // Animation scroll
-// const observer = new IntersectionObserver(entries=>{
-//   entries.forEach(e=>{
-//     if(e.isIntersecting){
-//       e.target.classList.add('show');
-//     }
-//   })
-// })
+// Typing effect for hero title
+function typeWriter(element, text, speed = 100) {
+  let i = 0;
+  element.textContent = '';
+  function type() {
+    if (i < text.length) {
+      element.textContent += text.charAt(i);
+      i++;
+      setTimeout(type, speed);
+    } else {
+      element.classList.remove('typing');
+    }
+  }
+  type();
+}
 
-// document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+// Scroll reveal animation
+function revealOnScroll() {
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
 
-// // Menu mobile
-// const toggle = document.querySelector('.menu-toggle');
-// const nav = document.querySelector('.nav-links');
+  reveals.forEach(reveal => observer.observe(reveal));
+}
 
-// toggle.onclick = ()=> nav.classList.toggle('active');
+// Hamburger menu toggle
+function initHamburgerMenu() {
+  const hamburger = document.querySelector('.hamburger');
+  const navLinks = document.querySelector('.nav-links');
 
-// // Bouton top
-// const btn = document.getElementById('topBtn');
-// window.onscroll = ()=>{
-//   btn.style.display = window.scrollY>200 ? 'block':'none';
-// }
-// btn.onclick = ()=> window.scrollTo({top:0,behavior:'smooth'});
+  if (hamburger && navLinks) {
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navLinks.classList.toggle('active');
+    });
 
-// // Lien actif
-// const links = document.querySelectorAll('.nav-links a');
-// window.addEventListener('scroll',()=>{
-//   let fromTop = window.scrollY+100;
-//   links.forEach(link=>{
-//     let section = document.querySelector(link.getAttribute('href'));
-//     if(section && section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop){
-//       link.style.color='white';
-//     } else {
-//       link.style.color='gray';
-//     }
-//   })
-// });
+    // Close menu when clicking a link
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('active');
+      });
+    });
+  }
+}
+
+// Smooth scrolling for anchor links
+function initSmoothScrolling() {
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
+}
+
+// Lightbox functionality
+function initLightbox() {
+  const modal = document.getElementById('image-modal');
+  const modalImg = document.getElementById('modal-image');
+  const closeBtn = document.querySelector('.close');
+
+  if (modal && modalImg && closeBtn) {
+    document.querySelectorAll('.project-image').forEach(img => {
+      img.addEventListener('click', function() {
+        modal.style.display = 'block';
+        modalImg.src = this.src;
+        modalImg.alt = this.alt;
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+
+    modal.addEventListener('click', (event) => {
+      if (event.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
+  }
+}
+
+// Parallax effect for background
+function initParallax() {
+  window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const parallaxElements = document.querySelectorAll('.hero');
+    parallaxElements.forEach(el => {
+      el.style.transform = `translateY(${scrolled * 0.5}px)`;
+    });
+  });
+}
+
+// Initialize all functions when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+  // Typing effect
+  const heroTitle = document.querySelector('.typing');
+  if (heroTitle) {
+    const text = heroTitle.textContent;
+    typeWriter(heroTitle, text, 80);
+  }
+
+  // Reveal animations
+  revealOnScroll();
+
+  // Hamburger menu
+  initHamburgerMenu();
+
+  // Smooth scrolling
+  initSmoothScrolling();
+
+  // Lightbox
+  initLightbox();
+
+  // Parallax (subtle)
+  initParallax();
+});
+
+// =============================
+// UTILITIES
+// =============================
+
+// Debounce function for performance
+function debounce(func, wait) {
+  let timeout;
+  return function executedFunction(...args) {
+    const later = () => {
+      clearTimeout(timeout);
+      func(...args);
+    };
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  };
+}
